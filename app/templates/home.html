@@ -1,0 +1,413 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Home | Rawasi Al Ammal{% endblock %}
+
+{% block content %}
+
+<!-- ================= HERO / BANNER ================= -->
+<section
+    class="relative min-h-[70vh] md:min-h-[100vh] flex items-center bg-fixed bg-center bg-cover overflow-hidden"
+    style="background-image: url('{{ banner.image.url }}');">
+
+    <!-- Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-r
+                from-black/70 via-black/50 to-black/30"></div>
+
+    <!-- Decorative Accent -->
+    <div class="absolute inset-y-0 right-0 w-1/3 bg-brandBlue/10 hidden md:block"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 py-32 grid md:grid-cols-2 gap-16 items-center">
+
+        <!-- Content -->
+        <div data-aos="fade-right">
+            <span class="inline-block mb-4 px-4 py-2 text-sm font-medium
+                         text-white bg-brandBlue/90 rounded-full">
+                Since 2010 · Riyadh, KSA
+            </span>
+
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight text-white">
+                Project Management <br>
+                <span class="text-brandLightBlue">& Electrical Services</span>
+            </h1>
+
+            <p class="mt-6 text-gray-200 text-lg max-w-xl leading-relaxed">
+                Rawasi Al Ammal Contracting Company delivers high-quality electrical,
+                plumbing, interior, and metal works with precision, safety,
+                and engineering excellence.
+            </p>
+
+            <div class="mt-10 flex flex-wrap gap-4">
+                <a href="{% url 'about' %}"
+                   class="bg-brandBlue text-white px-7 py-4 rounded-lg
+                          hover:bg-brandLightBlue transition shadow-lg">
+                    About Us
+                </a>
+
+                <a href="{% url 'contact' %}"
+                   class="border border-white/80 text-white px-7 py-4 rounded-lg
+                          hover:bg-white hover:text-brandBlack transition">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+
+        <div class="hidden md:flex justify-end" data-aos="fade-left">
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-sm shadow-xl">
+                <h3 class="text-white font-semibold mb-4">
+                    Why Choose Us
+                </h3>
+                <ul class="space-y-3 text-gray-200 text-sm">
+                    <li>• Experienced Project Management</li>
+                    <li>• Skilled Technical Workforce</li>
+                    <li>• Quality & Safety Focused</li>
+                    <li>• Timely Project Delivery</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+<!-- ================= ABOUT US ================= -->
+<section class="bg-white py-24">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+
+        <!-- Left Image -->
+        <div class="w-full" data-aos="fade-right">
+            <img 
+                src="https://png.pngtree.com/thumb_back/fh260/background/20240913/pngtree-electrician-working-on-electrical-panels-in-a-factory-image_16174281.jpg" 
+                alt="Rawasi Al Ammal Contracting"
+                class="w-full h-[420px] object-cover rounded-2xl shadow-lg"
+            >
+        </div>
+
+        <!-- Right Content -->
+        <div data-aos="fade-left">
+            <h2 class="text-3xl font-bold text-brandBlack mb-6">
+                About <span class="text-brandBlue">Rawasi Al Ammal</span>
+            </h2>
+
+            <p class="text-gray-600 leading-relaxed mb-8">
+                Established in 2010 in Riyadh, Saudi Arabia, Rawasi Al Ammal Contracting
+                Company has built a strong reputation for excellence, quality delivery,
+                and fast response across multiple engineering and contracting disciplines.
+            </p>
+
+            <!-- Key Points -->
+            <div class="space-y-4">
+
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-brandLightBlue/15
+                                flex items-center justify-center">
+                        <i class="fa-solid fa-briefcase text-brandBlue"></i>
+                    </div>
+                    <p class="text-gray-600">
+                        Over a decade of experience in project management and contracting services.
+                    </p>
+                </div>
+
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-brandLightBlue/15
+                                flex items-center justify-center">
+                        <i class="fa-solid fa-award text-brandBlue"></i>
+                    </div>
+                    <p class="text-gray-600">
+                        Commitment to high-quality standards, safety, and regulatory compliance.
+                    </p>
+                </div>
+
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-brandLightBlue/15
+                                flex items-center justify-center">
+                        <i class="fa-solid fa-users-gear text-brandBlue"></i>
+                    </div>
+                    <p class="text-gray-600">
+                        Highly skilled engineers, technicians, and project management professionals.
+                    </p>
+                </div>
+
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-brandLightBlue/15
+                                flex items-center justify-center">
+                        <i class="fa-solid fa-clock text-brandBlue"></i>
+                    </div>
+                    <p class="text-gray-600">
+                        Proven track record of timely delivery and responsive client support.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+
+<!-- ================= COURSES / SERVICES ================= -->
+<section class="bg-white ">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <h2 class="text-3xl font-bold text-center text-brandBlack mb-16" data-aos="fade-up">
+            Our <span class="text-brandBlue">Services</span>
+        </h2>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+
+            <!-- Electrical & Plumbing -->
+            <div data-aos="fade-up"
+                 class="group rounded-2xl overflow-hidden bg-white shadow hover:shadow-xl transition">
+
+                <img src="https://4.imimg.com/data4/SE/EK/MY-20762261/electrical-plumbing-services.jpg"
+                     class="h-52 w-full object-cover group-hover:scale-105 transition duration-500">
+
+                <div class="p-6">
+                    <h3 class="font-semibold text-lg text-brandBlack mb-2">
+                        Electrical & Plumbing Works
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                        Complete electrical installations, maintenance, power wiring, plumbing systems
+                        for industrial, commercial, and residential projects.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Metals & Tool Design -->
+            <div data-aos="fade-up" data-aos-delay="100"
+                 class="group rounded-2xl overflow-hidden bg-white shadow hover:shadow-xl transition">
+
+                <img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232"
+                     class="h-52 w-full object-cover group-hover:scale-105 transition duration-500">
+
+                <div class="p-6">
+                    <h3 class="font-semibold text-lg text-brandBlack mb-2">
+                        Metals & Tool Design
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                        Fabrication, welding, laser cutting, collapsible gates, stainless steel,
+                        aluminum and custom metal works.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Office & Residential Interior -->
+            <div data-aos="fade-up" data-aos-delay="200"
+                 class="group rounded-2xl overflow-hidden bg-white shadow hover:shadow-xl transition">
+
+                <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e"
+                     class="h-52 w-full object-cover group-hover:scale-105 transition duration-500">
+
+                <div class="p-6">
+                    <h3 class="font-semibold text-lg text-brandBlack mb-2">
+                        Office & Residential Interior
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                        Gypsum partitions, aluminum partitions, modular kitchens, painting,
+                        PVC doors, plastering and complete interior solutions.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Project Management -->
+            <div data-aos="fade-up" data-aos-delay="300"
+                 class="group rounded-2xl overflow-hidden bg-white shadow hover:shadow-xl transition">
+
+                <img src="https://media.istockphoto.com/id/980272768/photo/project-management-concept-chart-with-keywords-and-icons.jpg?s=612x612&w=0&k=20&c=OB3Lhh1-vD8ZU_07PM6F_vnN-hJTYhtWYID9UrFJRyU="
+                     class="h-52 w-full object-cover group-hover:scale-105 transition duration-500">
+
+                <div class="p-6">
+                    <h3 class="font-semibold text-lg text-brandBlack mb-2">
+                        Project Management
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                        End-to-end project planning, execution, scheduling, quality control
+                        and cost-effective delivery.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Maintenance Services -->
+            <div data-aos="fade-up" data-aos-delay="400"
+                 class="group rounded-2xl overflow-hidden bg-white shadow hover:shadow-xl transition">
+
+                <img src="https://img.freepik.com/free-photo/man-installs-heating-system-house-checks-pipes-with-wrench_169016-55822.jpg?semt=ais_hybrid&w=740&q=80"
+                     class="h-52 w-full object-cover group-hover:scale-105 transition duration-500">
+
+                <div class="p-6">
+                    <h3 class="font-semibold text-lg text-brandBlack mb-2">
+                        Maintenance & Emergency Services
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                        Electrical troubleshooting, testing, repair, emergency response,
+                        and preventive maintenance.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+<!-- ================= STUDENTS ================= -->
+<section class="bg-brandBlack py-24">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-white mb-4" data-aos="fade-up">
+                Our <span class="text-white">Students</span>
+            </h2>
+
+            <p class="text-gray-200 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                Our students and trainees are trained by experienced professionals and equipped
+                with practical, real-world skills for industrial and residential projects.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+
+            <!-- Student 1 -->
+            <div data-aos="fade-up"
+                 class="bg-white rounded-2xl shadow hover:shadow-xl transition p-8 text-center">
+
+                <img src="https://randomuser.me/api/portraits/men/32.jpg"
+                     class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
+
+                <h3 class="font-semibold text-lg text-brandBlack">
+                    Mohammed Faisal
+                </h3>
+
+                <p class="text-sm text-brandBlue font-medium mb-2">
+                    Electrical Trainee
+                </p>
+
+                <p class="text-sm text-gray-600">
+                    Hands-on experience in power wiring, control panels,
+                    and electrical maintenance works.
+                </p>
+            </div>
+
+            <!-- Student 2 -->
+            <div data-aos="fade-up" data-aos-delay="100"
+                 class="bg-white rounded-2xl shadow hover:shadow-xl transition p-8 text-center">
+
+                <img src="https://randomuser.me/api/portraits/men/45.jpg"
+                     class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
+
+                <h3 class="font-semibold text-lg text-brandBlack">
+                    Abdul Rahman
+                </h3>
+
+                <p class="text-sm text-brandBlue font-medium mb-2">
+                    Plumbing Technician Trainee
+                </p>
+
+                <p class="text-sm text-gray-600">
+                    Trained in internal drainage systems, sanitary ware fixing,
+                    and water supply installations.
+                </p>
+            </div>
+
+            <!-- Student 3 -->
+            <div data-aos="fade-up" data-aos-delay="200"
+                 class="bg-white rounded-2xl shadow hover:shadow-xl transition p-8 text-center">
+
+                <img src="https://randomuser.me/api/portraits/men/68.jpg"
+                     class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
+
+                <h3 class="font-semibold text-lg text-brandBlack">
+                    Salman Khan
+                </h3>
+
+                <p class="text-sm text-brandBlue font-medium mb-2">
+                    Interior Works Trainee
+                </p>
+
+                <p class="text-sm text-gray-600">
+                    Skilled in gypsum board work, aluminum partitions,
+                    painting and modular interior installations.
+                </p>
+            </div>
+
+        </div>
+        <a href="{% url 'ourstudents' %}" class="inline-block bg-brandBlue text-white py-2 rounded-lg
+                  hover:bg-brandBlack transition mt-8 mx-auto flex justify-center w-40">View More</a>
+    </div>
+</section>
+
+
+<!-- ================= CLIENTS ================= -->
+<section class="bg-white py-24">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <!-- Heading -->
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-brandBlack mb-4" data-aos="fade-up">
+                Our <span class="text-brandBlue">Clients</span>
+            </h2>
+            <p class="text-gray-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                We are proud to work with trusted clients across industrial, commercial,
+                and residential sectors.
+            </p>
+        </div>
+
+        <!-- Clients Grid -->
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-10 items-center">
+
+            {% for client in clients %}
+            <div data-aos="fade-up"
+                 class="flex items-center justify-center transition">
+
+                <img src="{{ client.image.url }}"
+                     alt="{{ client.name }}"
+                     class="h-full w-full object-contain transition duration-300">
+            </div>
+            {% endfor %}
+
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+
+
+<!-- ================= TESTIMONIALS ================= -->
+<section class="bg-white py-24">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <h2 class="text-3xl font-bold text-center text-brandBlack mb-16" data-aos="fade-up">
+            Client <span class="text-brandBlue">Testimonials</span>
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-10">
+
+            {% for t in "123"|make_list %}
+            <div data-aos="fade-up"
+                class="bg-gray-50 rounded-2xl p-8 shadow-sm">
+                <p class="text-gray-600">
+                    “Rawasi Al Ammal delivered our project on time with outstanding quality
+                    and professionalism.”
+                </p>
+                <h4 class="mt-4 font-semibold text-brandBlack">
+                    Project Manager
+                </h4>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}

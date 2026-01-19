@@ -1,0 +1,220 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Website{% endblock %}</title>
+
+    <!-- ================= GOOGLE FONT ================= -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+
+    <!-- ================= TAILWIND ================= -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config (Brand Colors + Font) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        josefin: ['"Josefin Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brandBlue: '#1e3a8a',
+                        brandLightBlue: '#38bdf8',
+                        brandBlack: '#0f172a',
+                    }
+                }
+            }
+        }
+    </script>
+
+
+
+    <!-- ================= FONT AWESOME ================= -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- ================= AOS ================= -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<style>
+    html, body {
+        scroll-behavior: smooth;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+</style>
+
+<body class="bg-white text-brandBlack font-josefin overflow-x-hidden">
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur shadow z-50">
+        <nav class="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
+
+            <!-- Logo -->
+            <a href="{% url 'home' %}" class="flex items-center gap-3">
+                <img src="{% static 'images/logo.png' %}" alt="Logo" class="h-16 w-auto">
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8 font-medium text-sm">
+                <a href="{% url 'home' %}" class="hover:text-brandBlue transition">Home</a>
+                <a href="{% url 'about' %}" class="hover:text-brandBlue transition">About</a>
+                <a href="{% url 'courses' %}" class="hover:text-brandBlue transition">Courses</a>
+                <a href="{% url 'blog' %}" class="hover:text-brandBlue transition">Blog</a>
+                <a href="{% url 'ourstudents' %}" class="hover:text-brandBlue transition">Students</a>
+                <a href="{% url 'gallery' %}" class="hover:text-brandBlue transition">Gallery</a>
+
+                <a href="{% url 'contact' %}"
+                    class="bg-brandBlue text-white px-4 py-2 rounded-lg hover:bg-brandLightBlue transition">
+                    Contact
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menuBtn" class="md:hidden text-brandBlue text-xl">
+                ☰
+            </button>
+        </nav>
+    </header>
+
+    <!-- ================= MOBILE SIDE MENU ================= -->
+    <div id="mobileMenu" class="fixed inset-0 bg-black/50 z-50 hidden">
+        <div class="absolute left-0 top-0 h-full w-72 bg-white shadow-xl p-6 flex flex-col gap-6"
+            data-aos="fade-right">
+
+            <img src="{% static 'images/logo.png' %}" class="h-10 w-16 mb-4">
+
+            <a href="{% url 'home' %}" class="font-medium mt-4">Home</a>
+            <a href="{% url 'about' %}" class="font-medium">About</a>
+            <a href="{% url 'courses' %}" class="font-medium">Courses</a>
+            <a href="{% url 'blog' %}" class="font-medium">Blog</a>
+            <a href="{% url 'ourstudents' %}" class="font-medium">Students</a>
+            <a href="{% url 'gallery' %}" class="font-medium">Gallery</a>
+            <a href="{% url 'contact' %}"
+                class="bg-brandBlue text-white px-4 py-2 rounded-lg text-center">
+                Contact
+            </a>
+
+            <button id="closeMenu" class="mt-auto text-sm text-gray-800 p-2 border border-black rounded-xl">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <!-- Spacer -->
+    <div class="h-20"></div>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-brandBlack text-white ">
+        <div class="max-w-7xl mx-auto px-6 py-10 grid md:grid-cols-4 gap-8">
+
+            <!-- Logo -->
+            <div data-aos="fade-up">
+                <img src="{% static 'images/logo.png' %}" class="h-10 mb-4">
+                <p class="text-sm text-gray-300">
+                    Empowering education with quality learning experiences.
+                </p>
+
+                
+            </div>
+
+            <!-- Links -->
+            <div data-aos="fade-up" data-aos-delay="100">
+                <h4 class="font-semibold mb-3">Quick Links</h4>
+                <ul class="space-y-2 text-sm text-gray-300">
+                    <li><a href="{% url 'home' %}" class="hover:text-white">Home</a></li>
+                    <li><a href="{% url 'about' %}" class="hover:text-white">About</a></li>
+                    <li><a href="{% url 'ourstudents' %}" class="hover:text-white">Students</a></li>
+                    <li><a href="{% url 'gallery' %}" class="hover:text-white">Gallery</a></li>
+                    <li><a href="{% url 'courses' %}" class="hover:text-white">Courses</a></li>
+                    <li><a href="{% url 'blog' %}" class="hover:text-white">Blog</a></li>
+                    <li><a href="{% url 'contact' %}" class="hover:text-white">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div data-aos="fade-up" data-aos-delay="200">
+                <h4 class="font-semibold mb-3">Contact</h4>
+                <p class="text-sm text-gray-300">
+                    Email: info@example.com<br>
+                    Phone: +91 XXXXX XXXXX
+                </p>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="200">
+                <h4 class="font-semibold mb-3">Social Media</h4>
+                <div class="flex gap-4 mt-4 text-lg">
+                    <a href="#" class="text-gray-400 hover:text-blue-500 transition hover:scale-110">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-pink-500 transition hover:scale-110">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-sky-400 transition hover:scale-110">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-blue-400 transition hover:scale-110">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-red-500 transition hover:scale-110">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="text-center text-xs text-gray-200 py-4 border-t border-gray-700">
+            © {% now 'Y' %} All Rights Reserved
+        </div>
+        <div class="text-center text-xs text-gray-200 hover:text-white pb-4">
+            Developed by <a href="https://www.inspirezesttechnologies.com" target="_blank">Inspirezesttechnologies Pvt Ltd</a>
+        </div>
+    </footer>
+
+    <!-- ================= SCRIPTS ================= -->
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const closeMenu = document.getElementById('closeMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuBtn.addEventListener('click', () => mobileMenu.classList.remove('hidden'));
+        closeMenu.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) mobileMenu.classList.add('hidden');
+        });
+    </script>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            duration: 900,
+            offset: 120,
+            easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+        });
+    </script>
+
+</body>
+</html>

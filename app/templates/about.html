@@ -1,0 +1,224 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}About Us | Rawasi Al Ammal{% endblock %}
+
+{% block content %}
+
+<!-- ================= HERO / BANNER ================= -->
+<section class="relative h-[30vh] flex items-center bg-white overflow-hidden">
+    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e"
+         class="absolute inset-0 w-full h-full object-cover">
+
+    <div class="absolute inset-0 bg-brandBlack/70"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white">
+            About <span class="text-brandLightBlue">Rawasi Al Ammal</span>
+        </h1>
+        <p class="mt-6 text-gray-200 max-w-3xl mx-auto">
+            Project Management & Electrical Services
+        </p>
+    </div>
+</section>
+
+<!-- ================= SECTION 1: OUR HISTORY ================= -->
+<section class="bg-white py-28">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+
+        <div>
+            <h2 class="text-3xl font-bold text-brandBlack mb-6">
+                Our <span class="text-brandBlue">History</span>
+            </h2>
+            <p class="text-gray-600 leading-relaxed">
+                Rawasi Al Ammal Contracting Company was established in the year 2010
+                and is based in Riyadh, Saudi Arabia.
+            </p>
+            <p class="mt-4 text-gray-600 leading-relaxed">
+                Within a short span of time, the company earned a strong reputation
+                for excellence, quality, and quick response.
+            </p>
+        </div>
+
+        <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc"
+             class="rounded-2xl shadow-lg h-[420px] w-full object-cover">
+    </div>
+</section>
+
+<!-- ================= SECTION 2: COMPANY OVERVIEW ================= -->
+<section class="bg-white py-28 border-t">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+        <p class="text-gray-600 leading-relaxed text-lg">
+            Rawasi Al Ammal Contracting is a standard-grade Project Management
+            and Electrical Services firm with a valid license, organized with
+            advanced technologies and highly skilled workers using sophisticated tools.
+        </p>
+    </div>
+</section>
+
+<!-- ================= SECTION 3: PHILOSOPHY ================= -->
+<section class="bg-white py-28">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c"
+             class="rounded-2xl shadow-lg h-[420px] w-full object-cover">
+
+        <div>
+            <h2 class="text-3xl font-bold text-brandBlack mb-6">
+                Our <span class="text-brandBlue">Philosophy</span>
+            </h2>
+            <p class="text-gray-600 leading-relaxed">
+                Over the years, the group has undertaken many challenging projects
+                and accumulated skills, know-how and experience in design and build
+                solutions, project management services, building trades and related
+                engineering works.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ================= SECTION 4: EXECUTION APPROACH ================= -->
+<section class="relative py-28 bg-fixed bg-center bg-cover"
+    style="background-image: url('https://plus.unsplash.com/premium_photo-1661960643553-ccfbf7d921f6?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZWxlY3RyaWNhbHxlbnwwfHwwfHx8MA%3D%3D');">
+
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-brandBlack/75"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 text-center">
+
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-10">
+            Project Management & Execution Philosophy
+        </h2>
+
+        <ul class="space-y-4 text-gray-200 text-lg max-w-3xl mx-auto text-center leading-relaxed">
+            <li>Create detailed schedules and resource plans to meet client projects</li>
+            <li>Communicate clearly with all project stakeholders</li>
+            <li>Track project progress and fine-tune deviations</li>
+            <li>Ensure only experienced and qualified professionals serve clients</li>
+        </ul>
+
+    </div>
+</section>
+
+
+
+<!-- ================= MISSION | VALUES | VISION ================= -->
+<section class="bg-white py-28">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="grid md:grid-cols-3 gap-10">
+
+            <!-- MISSION CARD -->
+            <div class="bg-brandBlue rounded-2xl p-10 text-center shadow-xl 
+                        hover:shadow-2xl transition">
+
+                <div class="w-20 h-20 mx-auto mb-6 rounded-full 
+                            bg-white/15 flex items-center justify-center">
+                    <i class="fa-solid fa-bullseye text-white text-4xl"></i>
+                </div>
+
+                <h3 class="text-2xl font-bold text-white mb-4">
+                    Our Mission
+                </h3>
+
+                <p class="text-gray-200 leading-relaxed">
+                    To procure projects at competitive pricing, provide safe working
+                    conditions and deliver quality work within a reasonable time frame.
+                </p>
+            </div>
+
+            <!-- VALUES CARD -->
+            <div class="bg-brandBlue rounded-2xl p-10 text-center shadow-xl 
+                        hover:shadow-2xl transition">
+
+                <div class="w-20 h-20 mx-auto mb-6 rounded-full 
+                            bg-white/15 flex items-center justify-center">
+                    <i class="fa-solid fa-gem text-white text-4xl"></i>
+                </div>
+
+                <h3 class="text-2xl font-bold text-white mb-6">
+                    Our Values
+                </h3>
+
+                <ul class="space-y-3 text-gray-200">
+                    <li>Teamwork</li>
+                    <li>Quality Service</li>
+                    <li>Time-bound Delivery</li>
+                    <li>Customer Satisfaction</li>
+                </ul>
+            </div>
+
+            <!-- VISION CARD -->
+            <div class="bg-brandBlue rounded-2xl p-10 text-center shadow-xl 
+                        hover:shadow-2xl transition">
+
+                <div class="w-20 h-20 mx-auto mb-6 rounded-full 
+                            bg-white/15 flex items-center justify-center">
+                    <i class="fa-solid fa-eye text-white text-4xl"></i>
+                </div>
+
+                <h3 class="text-2xl font-bold text-white mb-4">
+                    Our Vision
+                </h3>
+
+                <p class="text-gray-200 leading-relaxed">
+                    To be a respectable building contractor delivering beyond
+                    expectations, always.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+
+
+<!-- ================= SECTION 9: OUR TEAM ================= -->
+<section class="bg-white py-4">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+
+        <div>
+            <h2 class="text-3xl font-bold text-brandBlack mb-6">
+                Our <span class="text-brandBlue">Team</span>
+            </h2>
+            <p class="text-gray-600 leading-relaxed">
+                The management team is involved in business development,
+                procurement, project management and administration of the company.
+                They continuously review processes and communicate key learning
+                points and company policies to all staff.
+            </p>
+        </div>
+
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
+             class="rounded-2xl shadow-lg h-[420px] w-full object-cover">
+    </div>
+</section>
+
+<!-- ================= SECTION 10: QUALITY POLICY ================= -->
+<section class="bg-white py-28">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <h2 class="text-3xl font-bold text-brandBlack mb-8 text-center">
+            Quality <span class="text-brandBlue">Policy</span>
+        </h2>
+
+        <p class="text-gray-600 leading-relaxed mb-6">
+            The company firmly believes in Quality Assurance and Quality Control.
+            These concepts ensure that products and services meet stated and implied needs.
+        </p>
+
+        <p class="text-gray-600 leading-relaxed">
+            Quality Assurance involves systematic actions to provide confidence in quality,
+            while Quality Control includes operational techniques to fulfill quality requirements,
+            following safety rules and regulations.
+        </p>
+
+    </div>
+</section>
+
+{% endblock %}

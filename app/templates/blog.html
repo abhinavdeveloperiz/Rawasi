@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Blog | Rawasi Al Ammal{% endblock %}
+
+{% block content %}
+
+<!-- ================= BLOG HERO ================= -->
+<section class="relative h-[30vh] flex items-center bg-white overflow-hidden">
+    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e"
+         class="absolute inset-0 w-full h-full object-cover">
+    <div class="absolute inset-0 bg-brandBlack/70"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white">
+            Our <span class="text-brandLightBlue">Blog</span>
+        </h1>
+        <p class="mt-6 text-gray-200 max-w-3xl mx-auto">
+            Insights, updates, and industry knowledge from our engineering,
+            project management, and technical teams.
+        </p>
+    </div>
+</section>
+
+<!-- ================= BLOG INTRO ================= -->
+<section class="bg-white py-24">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold text-brandBlack mb-6">
+            Latest <span class="text-brandBlue">Articles</span>
+        </h2>
+        <p class="text-gray-600 leading-relaxed">
+            Stay informed with our latest articles covering project execution,
+            safety standards, maintenance practices, and industry best practices.
+        </p>
+    </div>
+</section>
+
+<!-- ================= BLOG LIST ================= -->
+<section class="bg-white pb-10 border-t">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+
+            <!-- Blog Card 1 -->
+            <div class="rounded-2xl overflow-hidden border border-gray-100 shadow hover:shadow-xl transition">
+                <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc"
+                     class="h-52 w-full object-cover">
+                <div class="p-8">
+                    <p class="text-sm text-gray-500 mb-2">Electrical • Safety</p>
+                    <h3 class="text-xl font-semibold text-brandBlack mb-3">
+                        Importance of Electrical Safety in Industrial Projects
+                    </h3>
+                    <p class="text-gray-600 text-sm mb-6">
+                        Understanding safety procedures, risk prevention, and quality
+                        standards is essential for successful project execution.
+                    </p>
+                   
+                </div>
+            </div>
+
+            <!-- Blog Card 2 -->
+            <div class="rounded-2xl overflow-hidden border border-gray-100 shadow hover:shadow-xl transition">
+                <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
+                     class="h-52 w-full object-cover">
+                <div class="p-8">
+                    <p class="text-sm text-gray-500 mb-2">Project Management</p>
+                    <h3 class="text-xl font-semibold text-brandBlack mb-3">
+                        Key Elements of Effective Project Planning
+                    </h3>
+                    <p class="text-gray-600 text-sm mb-6">
+                        A well-structured plan ensures timely delivery, cost control,
+                        and better coordination across all stakeholders.
+                    </p>
+                   
+                </div>
+            </div>
+
+          
+
+            <!-- Blog Card 5 -->
+            <div class="rounded-2xl overflow-hidden border border-gray-100 shadow hover:shadow-xl transition">
+                <img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232"
+                     class="h-52 w-full object-cover">
+                <div class="p-8">
+                    <p class="text-sm text-gray-500 mb-2">Training</p>
+                    <h3 class="text-xl font-semibold text-brandBlack mb-3">
+                        Building Skilled Technical Teams
+                    </h3>
+                    <p class="text-gray-600 text-sm mb-6">
+                        Structured training programs help develop skilled professionals
+                        capable of handling complex engineering tasks.
+                    </p>
+                  
+                </div>
+            </div>
+
+            <!-- Blog Card 6 -->
+            <div class="rounded-2xl overflow-hidden border border-gray-100 shadow hover:shadow-xl transition">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c"
+                     class="h-52 w-full object-cover">
+                <div class="p-8">
+                    <p class="text-sm text-gray-500 mb-2">Industry</p>
+                    <h3 class="text-xl font-semibold text-brandBlack mb-3">
+                        Trends in Modern Construction & Contracting
+                    </h3>
+                    <p class="text-gray-600 text-sm mb-6">
+                        Exploring how technology and best practices are shaping
+                        the future of contracting and engineering projects.
+                    </p>
+                  
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= PAGINATION (OPTIONAL) ================= -->
+<section class="bg-white py-16 border-t">
+    <div class="max-w-7xl mx-auto px-6 flex justify-center gap-4">
+        <a href="#" class="px-4 py-2 border rounded-lg text-brandBlack hover:bg-gray-50">Previous</a>
+        <a href="#" class="px-4 py-2 border rounded-lg bg-brandBlue text-white">1</a>
+        <a href="#" class="px-4 py-2 border rounded-lg text-brandBlack hover:bg-gray-50">2</a>
+        <a href="#" class="px-4 py-2 border rounded-lg text-brandBlack hover:bg-gray-50">Next</a>
+    </div>
+</section>
+
+{% endblock %}
