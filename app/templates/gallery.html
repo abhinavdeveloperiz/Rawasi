@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Gallery | Rawasi Al Ammal{% endblock %}
+
+{% block content %}
+
+<!-- ================= HERO ================= -->
+<section class="relative h-[30vh] flex items-center bg-white overflow-hidden">
+    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e"
+         class="absolute inset-0 w-full h-full object-cover">
+    <div class="absolute inset-0 bg-brandBlack/70"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white">
+            Project <span class="text-brandLightBlue">Gallery</span>
+        </h1>
+        <p class="mt-6 text-gray-200 max-w-3xl mx-auto">
+            A glimpse of our training programs, workshops, and on-site project executions.
+        </p>
+    </div>
+</section>
+
+
+<!-- ================= GALLERY GRID ================= -->
+<section class="bg-white py-28">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+            <!-- Card 1 -->
+            <div class="group relative overflow-hidden rounded-2xl shadow hover:shadow-xl transition">
+                <img src="https://thumbs.dreamstime.com/b/plumber-work-bathroom-plumbing-repair-service-assemble-install-concept-plumber-work-bathroom-plumbing-repair-113995223.jpg"
+                     class="w-full h-72 object-cover transform group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-brandBlack/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <p class="text-white font-semibold text-lg">Plumbing Training</p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="group relative overflow-hidden rounded-2xl shadow hover:shadow-xl transition">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3172X9IiaIO0nr97snljvf_N0WA0za5Kqlg&s"
+                     class="w-full h-72 object-cover transform group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-brandBlack/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <p class="text-white font-semibold text-lg">Electrical Workshop</p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="group relative overflow-hidden rounded-2xl shadow hover:shadow-xl transition">
+                <img src="https://media.istockphoto.com/id/1158885821/photo/group-training.jpg?s=612x612&w=0&k=20&c=rtcUNxRa-CH-u0fv7-aiNK-1o2RnYs1vNtdlAQLLa7o="
+                     class="w-full h-72 object-cover transform group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-brandBlack/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <p class="text-white font-semibold text-lg">Site Practice</p>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="group relative overflow-hidden rounded-2xl shadow hover:shadow-xl transition">
+                <img src="https://www.shutterstock.com/shutterstock/videos/3676963325/thumb/1.jpg?ip=x480"
+                     class="w-full h-72 object-cover transform group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-brandBlack/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <p class="text-white font-semibold text-lg">Maintenance Training</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+{% endblock %}
