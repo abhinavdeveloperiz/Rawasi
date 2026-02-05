@@ -257,95 +257,8 @@
 
 
 
-<!-- ================= STUDENTS ================= -->
-<section class="bg-brandBlack py-24">
-    <div class="max-w-7xl mx-auto px-6">
-
-        <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-white mb-4" data-aos="fade-up">
-                Our <span class="text-white">Students</span>
-            </h2>
-
-            <p class="text-gray-200 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-                Our students and trainees are trained by experienced professionals and equipped
-                with practical, real-world skills for industrial and residential projects.
-            </p>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
-
-            <!-- Student 1 -->
-            <div data-aos="fade-up"
-                 class="bg-white rounded-2xl shadow hover:shadow-xl transition p-8 text-center">
-
-                <img src="https://randomuser.me/api/portraits/men/32.jpg"
-                     class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
-
-                <h3 class="font-semibold text-lg text-brandBlack">
-                    Mohammed Faisal
-                </h3>
-
-                <p class="text-sm text-brandBlue font-medium mb-2">
-                    Electrical Trainee
-                </p>
-
-                <p class="text-sm text-gray-600">
-                    Hands-on experience in power wiring, control panels,
-                    and electrical maintenance works.
-                </p>
-            </div>
-
-            <!-- Student 2 -->
-            <div data-aos="fade-up" data-aos-delay="100"
-                 class="bg-white rounded-2xl shadow hover:shadow-xl transition p-8 text-center">
-
-                <img src="https://randomuser.me/api/portraits/men/45.jpg"
-                     class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
-
-                <h3 class="font-semibold text-lg text-brandBlack">
-                    Abdul Rahman
-                </h3>
-
-                <p class="text-sm text-brandBlue font-medium mb-2">
-                    Plumbing Technician Trainee
-                </p>
-
-                <p class="text-sm text-gray-600">
-                    Trained in internal drainage systems, sanitary ware fixing,
-                    and water supply installations.
-                </p>
-            </div>
-
-            <!-- Student 3 -->
-            <div data-aos="fade-up" data-aos-delay="200"
-                 class="bg-white rounded-2xl shadow hover:shadow-xl transition p-8 text-center">
-
-                <img src="https://randomuser.me/api/portraits/men/68.jpg"
-                     class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
-
-                <h3 class="font-semibold text-lg text-brandBlack">
-                    Salman Khan
-                </h3>
-
-                <p class="text-sm text-brandBlue font-medium mb-2">
-                    Interior Works Trainee
-                </p>
-
-                <p class="text-sm text-gray-600">
-                    Skilled in gypsum board work, aluminum partitions,
-                    painting and modular interior installations.
-                </p>
-            </div>
-
-        </div>
-        <a href="{% url 'ourstudents' %}" class="inline-block bg-brandBlue text-white py-2 rounded-lg
-                  hover:bg-brandBlack transition mt-8 mx-auto flex justify-center w-40">View More</a>
-    </div>
-</section>
-
-
-<!-- ================= CLIENTS ================= -->
-<section class="bg-white py-24">
+<!-- AUTO SCROLLING CLIENTS SECTION -->
+<section class="bg-white py-24 overflow-hidden">
     <div class="max-w-7xl mx-auto px-6">
 
         <!-- Heading -->
@@ -359,23 +272,51 @@
             </p>
         </div>
 
-        <!-- Clients Grid -->
-        <div class="grid grid-cols-2 md:grid-cols-5 gap-10 items-center">
+        <!-- Slider Wrapper -->
+        <div class="relative w-full overflow-hidden">
 
-            {% for client in clients %}
-            <div data-aos="fade-up"
-                 class="flex items-center justify-center transition">
+            <!-- Scrolling Track -->
+            <div class="flex w-max gap-16 animate-client-scroll hover:[animation-play-state:paused]">
 
-                <img src="{{ client.image.url }}"
-                     alt="{{ client.name }}"
-                     class="h-full w-full object-contain transition duration-300">
+                {% for client in clients %}
+                <div class="flex items-center justify-center min-w-[180px]">
+                    <img src="{{ client.image.url }}"
+                         alt="{{ client.name }}"
+                         class="h-42 w-auto object-contain transition duration-300">
+                </div>
+                {% endfor %}
+
+                <!-- Duplicate for seamless infinite scroll -->
+                {% for client in clients %}
+                <div class="flex items-center justify-center min-w-[180px]">
+                    <img src="{{ client.image.url }}"
+                         alt="{{ client.name }}"
+                         class="h-42 w-auto object-contain opacity-80 transition duration-300">
+                </div>
+                {% endfor %}
+
             </div>
-            {% endfor %}
-
         </div>
 
     </div>
 </section>
+
+<!-- CUSTOM ANIMATION -->
+<style>
+@keyframes client-scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-client-scroll {
+    animation: client-scroll 30s linear infinite;
+}
+</style>
+
 
 
 

@@ -120,3 +120,32 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+JAZZMIN_SETTINGS = {
+
+    # Titles
+    "site_title": "Rawasi Admin",
+    "site_header": "Rawasi Admin",
+    "site_brand": "Rawasi",
+
+    # Logos
+    "site_logo": "images/logo.png",
+    "login_logo": "images/logo.png",
+
+
+    # Login welcome text
+    "welcome_sign": "Welcome to Rawasi Admin Portal",
+
+    # Footer
+    "copyright": "Rawasi",
+
+    # Layout
+    "show_sidebar": True,
+    "navigation_expanded": True,
+
+    "custom_css": "css/admin-responsive.css",
+
+}
+

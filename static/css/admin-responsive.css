@@ -1,0 +1,39 @@
+
+.brand-link .brand-image {
+    float: none !important;
+    max-height: 42px;
+    width: auto;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* ===============================
+   LOGIN PAGE LOGO (DESKTOP)
+================================ */
+.login-logo img {
+    max-height: 80px;
+    width: auto;
+}
+
+/* ===============================
+   MOBILE FIXES
+================================ */
+@media (max-width: 768px) {
+
+    /* Header logo mobile */
+    .brand-link .brand-image {
+        max-height: 32px;
+        margin-right: 6px;
+    }
+
+    /* Login page logo mobile */
+    .login-logo img {
+        max-height: 50px;
+        margin-bottom: 10px;
+    }
+}
+
+.brand-image,
+.login-logo img {
+    border-radius: 0 !important;
+}

@@ -3,6 +3,7 @@ from .models import BannerImages, Clients, Services, Courses, Students, Gallery
 # Register your models here.
 
 
+
 admin.site.register(BannerImages)
 admin.site.register(Clients)
 admin.site.register(Services)

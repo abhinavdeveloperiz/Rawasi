@@ -5,7 +5,7 @@ from .models import BannerImages, Clients, Services, Courses, Students, Gallery
 
 def home(request):
     banner_images = BannerImages.objects.last()
-    Services_list = Services.objects.all()[:6]
+    Services_list = Services.objects.order_by('-id')[:6]
     clients_list = Clients.objects.all()
 
     context = {
@@ -21,7 +21,13 @@ def about(request):
     return render(request, 'about.html')
 
 def courses(request):
-    return render(request, 'courses.html')
+
+    service=Services.objects.order_by('-id')
+    context = {
+        'Services': service,
+    }
+
+    return render(request, 'courses.html', context)
 
 def blog(request):
     return render(request, 'blog.html')
@@ -30,7 +36,11 @@ def gallery(request):
     return render(request, 'gallery.html')
 
 def ourstudents(request):
-    return render(request, 'ourstudents.html')
+    clients= Clients.objects.all()
+    context = {
+        'clients': clients,
+    }
+    return render(request, 'ourstudents.html', context)
 
 def contact(request):
     return render(request, 'contact.html')

@@ -7,7 +7,7 @@ class BannerImages(models.Model):
     image = models.ImageField(upload_to='banners/')
 
     def __str__(self):
-        return self.image.url
+        return f"Banner Image {self.id}"
     
     class Meta:
         verbose_name = "Banner Image"
