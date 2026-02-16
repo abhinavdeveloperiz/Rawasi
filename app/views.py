@@ -1,12 +1,12 @@
 from django.shortcuts import render
-from .models import BannerImages, Clients, Services, Courses, Students, Gallery
-
+from .models import BannerImages, Clients, Services,Projects
 # Create your views here.
 
 def home(request):
     banner_images = BannerImages.objects.last()
     Services_list = Services.objects.order_by('-id')[:6]
     clients_list = Clients.objects.all()
+    
 
     context = {
         'banner': banner_images,
@@ -29,8 +29,14 @@ def courses(request):
 
     return render(request, 'courses.html', context)
 
+
 def blog(request):
-    return render(request, 'blog.html')
+    projects = Projects.objects.order_by('-id')
+    context = {
+        'projects': projects,
+    }
+    return render(request, 'blog.html', context)
+
 
 def gallery(request):
     return render(request, 'gallery.html')

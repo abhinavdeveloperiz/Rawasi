@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import BannerImages, Clients, Services, Courses, Students, Gallery
+from .models import BannerImages, Clients, Services,Projects
 # Register your models here.
 
 
@@ -7,6 +7,4 @@ from .models import BannerImages, Clients, Services, Courses, Students, Gallery
 admin.site.register(BannerImages)
 admin.site.register(Clients)
 admin.site.register(Services)
-admin.site.register(Courses)
-admin.site.register(Students)
-admin.site.register(Gallery)
+admin.site.register(Projects)

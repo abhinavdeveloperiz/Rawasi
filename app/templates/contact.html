@@ -8,7 +8,7 @@
 <!-- ================= HERO ================= -->
 <section class="relative h-[30vh] flex items-center overflow-hidden">
     <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216"
-         class="absolute inset-0 w-full h-full object-cover">
+        class="absolute inset-0 w-full h-full object-cover">
     <div class="absolute inset-0 bg-brandBlack/70"></div>
 
     <div class="relative max-w-7xl mx-auto px-6 text-center">
@@ -36,15 +36,15 @@
                 <!-- Address -->
                 <div class="flex items-start gap-4">
                     <i class="fa-solid fa-location-dot text-brandBlue text-xl mt-1"></i>
-                   <p>
-    <span class="font-semibold text-brandBlack">Address</span><br>
-    Rawasi Al Ammal Contracting Est.<br>
-    Al Eriga<br>
-    Al Eriga<br>
-    Riyadh Ar Riyad 11716<br>
-    Saudi Arabia<br>
-    TRN 302011789600003
-</p>
+                    <p>
+                        <span class="font-semibold text-brandBlack">Address</span><br>
+                        Rawasi Al Ammal Contracting Est.<br>
+                        Al Eriga<br>
+                        Al Eriga<br>
+                        Riyadh Ar Riyad 11716<br>
+                        Saudi Arabia<br>
+                        TRN 302011789600003
+                    </p>
 
                 </div>
 
@@ -71,9 +71,8 @@
                     <i class="fa-brands fa-facebook text-brandBlue text-xl mt-1"></i>
                     <p>
                         <span class="font-semibold text-brandBlack">Facebook</span><br>
-                        <a href="https://www.facebook.com/share/1JBAkAsTia/"
-                           target="_blank"
-                           class="text-brandBlue hover:underline">
+                        <a href="https://www.facebook.com/share/1JBAkAsTia/" target="_blank"
+                            class="text-brandBlue hover:underline">
                             Follow us on Facebook
                         </a>
                     </p>
@@ -84,15 +83,14 @@
 
         <!-- ================= CONTACT FORM ================= -->
         <div class="border border-gray-100 rounded-2xl shadow-lg p-10">
-            <form method="post" class="space-y-6">
+            <form method="post" id="contactForm" class="space-y-6">
                 {% csrf_token %}
 
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-2">
                         Full Name
                     </label>
-                    <input type="text" name="name" required
-                           class="w-full border border-gray-300 rounded-lg px-4 py-3
+                    <input type="text" name="name" required class="w-full border border-gray-300 rounded-lg px-4 py-3
                                   focus:outline-none focus:ring-2 focus:ring-brandBlue">
                 </div>
 
@@ -100,8 +98,7 @@
                     <label class="block text-sm font-medium text-gray-700 mb-2">
                         Email Address
                     </label>
-                    <input type="email" name="email" required
-                           class="w-full border border-gray-300 rounded-lg px-4 py-3
+                    <input type="email" name="email" required class="w-full border border-gray-300 rounded-lg px-4 py-3
                                   focus:outline-none focus:ring-2 focus:ring-brandBlue">
                 </div>
 
@@ -109,18 +106,37 @@
                     <label class="block text-sm font-medium text-gray-700 mb-2">
                         Message
                     </label>
-                    <textarea name="message" rows="5" required
-                              class="w-full border border-gray-300 rounded-lg px-4 py-3
+                    <textarea name="message" rows="5" required class="w-full border border-gray-300 rounded-lg px-4 py-3
                                      focus:outline-none focus:ring-2 focus:ring-brandBlue"></textarea>
                 </div>
 
-                <button type="submit"
-                        class="w-full bg-brandBlue text-white py-4 rounded-lg
+                <button type="submit" class="w-full bg-brandBlue text-white py-4 rounded-lg
                                font-semibold hover:bg-brandBlack transition">
                     Send Message
                 </button>
             </form>
         </div>
+        <script>
+            document.getElementById("contactForm").addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                const name = document.querySelector("input[name='name']").value;
+                const email = document.querySelector("input[name='email']").value;
+                const message = document.querySelector("textarea[name='message']").value;
+
+                const phone = "966562109463";
+
+                const text = `Hello, I have a new enquiry:%0A
+Name: ${name}%0A
+Email: ${email}%0A
+Message: ${message}`;
+
+                const whatsappURL = `https://wa.me/${phone}?text=${text}`;
+
+                window.open(whatsappURL, "_blank");
+            });
+        </script>
+
 
     </div>
 </section>
@@ -131,9 +147,7 @@
         <div class="rounded-2xl overflow-hidden shadow-lg border">
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3456.8101091334756!2d46.690856975363594!3d24.629985778080506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjTCsDM3JzQ4LjAiTiA0NsKwNDEnMzYuNCJF!5e1!3m2!1sen!2sin!4v1769164437816!5m2!1sen!2sin"
-                class="w-full h-[450px] border-0"
-                allowfullscreen=""
-                loading="lazy"
+                class="w-full h-[450px] border-0" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade">
             </iframe>
         </div>

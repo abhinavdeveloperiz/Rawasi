@@ -8,7 +8,7 @@
 <!-- ================= HERO / BANNER ================= -->
 <section class="relative h-[30vh] flex items-center bg-white overflow-hidden">
     <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc"
-         class="absolute inset-0 w-full h-full object-cover">
+        class="absolute inset-0 w-full h-full object-cover">
     <div class="absolute inset-0 bg-brandBlack/70"></div>
 
     <div class="relative max-w-7xl mx-auto px-6 text-center">
@@ -31,95 +31,25 @@
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
 
-            <!-- Electrical & Plumbing -->
-            <div data-aos="fade-up"
-                 class="group rounded-2xl overflow-hidden bg-white shadow hover:shadow-xl transition">
 
-                <img src="https://4.imimg.com/data4/SE/EK/MY-20762261/electrical-plumbing-services.jpg"
-                     class="h-52 w-full object-cover group-hover:scale-105 transition duration-500">
-
-                <div class="p-6">
-                    <h3 class="font-semibold text-lg text-brandBlack mb-2">
-                        Electrical & Plumbing Works
-                    </h3>
-                    <p class="text-sm text-gray-600">
-                        Complete electrical installations, maintenance, power wiring, plumbing systems
-                        for industrial, commercial, and residential projects.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Metals & Tool Design -->
-            <div data-aos="fade-up" data-aos-delay="100"
-                 class="group rounded-2xl overflow-hidden bg-white shadow hover:shadow-xl transition">
-
-                <img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232"
-                     class="h-52 w-full object-cover group-hover:scale-105 transition duration-500">
-
-                <div class="p-6">
-                    <h3 class="font-semibold text-lg text-brandBlack mb-2">
-                        Metals & Tool Design
-                    </h3>
-                    <p class="text-sm text-gray-600">
-                        Fabrication, welding, laser cutting, collapsible gates, stainless steel,
-                        aluminum and custom metal works.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Office & Residential Interior -->
-            <div data-aos="fade-up" data-aos-delay="200"
-                 class="group rounded-2xl overflow-hidden bg-white shadow hover:shadow-xl transition">
-
-                <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e"
-                     class="h-52 w-full object-cover group-hover:scale-105 transition duration-500">
-
-                <div class="p-6">
-                    <h3 class="font-semibold text-lg text-brandBlack mb-2">
-                        Office & Residential Interior
-                    </h3>
-                    <p class="text-sm text-gray-600">
-                        Gypsum partitions, aluminum partitions, modular kitchens, painting,
-                        PVC doors, plastering and complete interior solutions.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Project Management -->
-            <div data-aos="fade-up" data-aos-delay="300"
-                 class="group rounded-2xl overflow-hidden bg-white shadow hover:shadow-xl transition">
-
-                <img src="https://media.istockphoto.com/id/980272768/photo/project-management-concept-chart-with-keywords-and-icons.jpg?s=612x612&w=0&k=20&c=OB3Lhh1-vD8ZU_07PM6F_vnN-hJTYhtWYID9UrFJRyU="
-                     class="h-52 w-full object-cover group-hover:scale-105 transition duration-500">
-
-                <div class="p-6">
-                    <h3 class="font-semibold text-lg text-brandBlack mb-2">
-                        Project Management
-                    </h3>
-                    <p class="text-sm text-gray-600">
-                        End-to-end project planning, execution, scheduling, quality control
-                        and cost-effective delivery.
-                    </p>
-                </div>
-            </div>
-
+            {% for s in Services %}
             <!-- Maintenance Services -->
             <div data-aos="fade-up" data-aos-delay="400"
-                 class="group rounded-2xl overflow-hidden bg-white shadow hover:shadow-xl transition">
+                class="group rounded-2xl overflow-hidden bg-white shadow hover:shadow-xl transition">
 
-                <img src="https://img.freepik.com/free-photo/man-installs-heating-system-house-checks-pipes-with-wrench_169016-55822.jpg?semt=ais_hybrid&w=740&q=80"
-                     class="h-52 w-full object-cover group-hover:scale-105 transition duration-500">
+                <img src="{{ s.image.url }}"
+                    class="h-52 w-full object-cover group-hover:scale-105 transition duration-500">
 
                 <div class="p-6">
                     <h3 class="font-semibold text-lg text-brandBlack mb-2">
-                        Maintenance & Emergency Services
+                        {{ s.title }}
                     </h3>
                     <p class="text-sm text-gray-600">
-                        Electrical troubleshooting, testing, repair, emergency response,
-                        and preventive maintenance.
+                        {{ s.description }}
                     </p>
                 </div>
             </div>
+            {% endfor %}
 
         </div>
     </div>
@@ -140,8 +70,7 @@
             Join our industry-focused training programs and gain hands-on experience
             under expert supervision.
         </p>
-        <a href="{% url 'contact' %}"
-           class="inline-block bg-brandBlue text-white px-8 py-4 rounded-lg
+        <a href="{% url 'contact' %}" class="inline-block bg-brandBlue text-white px-8 py-4 rounded-lg
                   hover:bg-brandBlack transition">
             Enroll / Contact Us
         </a>
